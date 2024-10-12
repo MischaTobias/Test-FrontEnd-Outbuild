@@ -11,13 +11,12 @@ export const AuthLayout = ({ children, title = "" }) => {
       sx={{ minHeight: "100vh", backgroundColor: "primary.main", padding: 4 }} // Use sx for custom styles
     >
       {/* Title Section */}
-      <Grid2 item sx={{ mb: 3 }}>
+      <Grid2 sx={{ mb: 3 }}>
         <Typography variant="h3">{title}</Typography>
       </Grid2>
 
       {/* Children Container */}
       <Grid2
-        item
         container
         xs={12} // Full width on small screens
         md={6} // Half width on medium and larger screens

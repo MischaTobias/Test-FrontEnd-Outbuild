@@ -1,3 +1,3 @@
 export * from "./authSlice";
-export * from "./authTypes";
+export * from "./authStatusTypes";
 export * from "./thunks";
