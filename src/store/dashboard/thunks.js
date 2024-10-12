@@ -1,14 +1,14 @@
 import { loadItems } from "../../dashboard";
-import { setItems, setLoading } from "./dashboardSlice";
+import { onSetItems, onSetLoading } from "./dashboardSlice";
 
 export const startLoadingDashboardItems = () => {
   return async (dispatch, getState) => {
-    dispatch(setLoading());
+    dispatch(onSetLoading());
     const { uid } = getState().auth;
     if (!uid) throw new Error("User UID not found");
 
     const items = await loadItems();
 
-    dispatch(setItems(items));
+    dispatch(onSetItems(items));
   };
 };

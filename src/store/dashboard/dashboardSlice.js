@@ -5,17 +5,22 @@ export const dashboardSlice = createSlice({
   initialState: {
     items: null,
     isLoading: false,
+    activeItem: null,
   },
   reducers: {
-    setItems: (state, { payload }) => {
+    onSetActiveItem: (state, { payload }) => {
+      state.activeItem = payload;
+    },
+    onSetItems: (state, { payload }) => {
       state.items = payload;
       state.isLoading = false;
     },
-    setLoading: (state) => {
+    onSetLoading: (state) => {
       state.items = null;
       state.isLoading = true;
     },
   },
 });
 
-export const { setItems, setLoading } = dashboardSlice.actions;
+export const { onSetActiveItem, onSetItems, onSetLoading } =
+  dashboardSlice.actions;

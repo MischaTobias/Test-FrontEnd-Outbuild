@@ -1,5 +1,5 @@
-import { NavBar } from "../components";
-import { Grid2, Toolbar } from "@mui/material";
+import { Grid2 } from "@mui/material";
+import { NavBar, ItemModal } from "../components";
 
 export const DashboardLayout = ({ children }) => {
   return (
@@ -21,6 +21,7 @@ export const DashboardLayout = ({ children }) => {
         {/* Children (main content) */}
         {children}
       </Grid2>
+      <ItemModal />
     </div>
   );
 };

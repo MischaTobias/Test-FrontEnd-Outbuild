@@ -1,10 +1,17 @@
 import { Grid2, Typography } from "@mui/material";
-import { DashboardLayout } from "../layout/DashboardLayout";
-import { DashboardTable } from "../components/DashboardTable";
-import { useSelector } from "react-redux";
+
+import { DashboardLayout } from "../layout";
+import { DashboardTable } from "../components";
+import { useDashboardStore, useUiStore } from "../../hooks";
 
 export const DashboardPage = () => {
-  const { items } = useSelector((state) => state.dashboard);
+  const { items, selectItem } = useDashboardStore();
+  const { openItemModal } = useUiStore();
+
+  const onSelectItem = (item) => {
+    selectItem(item);
+    openItemModal();
+  };
 
   return (
     <DashboardLayout>
@@ -20,7 +27,7 @@ export const DashboardPage = () => {
               No items found
             </Typography>
           ) : (
-            <DashboardTable items={items} />
+            <DashboardTable items={items} onSelectItem={onSelectItem} />
           )}
         </Grid2>
       </Grid2>
