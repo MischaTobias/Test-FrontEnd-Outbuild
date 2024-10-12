@@ -34,13 +34,14 @@ jobs:
       # - name: Run Unit Tests
       #   run: yarn test
       - name: Build app for deploy
-        env: VITE_APIKEY=secrets.VITE_APIKEY
-          VITE_AUTHDOMAIN=secrets.VITE_AUTHDOMAIN
-          VITE_PROJECTID=secrets.VITE_PROJECTID
-          VITE_STORAGEBUCKET=secrets.VITE_STORAGEBUCKET
-          VITE_MESSAGINGSENDERID=secrets.VITE_MESSAGINGSENDERID
-          VITE_APPID=secrets.VITE_APPID
-          VITE_ITEMS_URL=secrets.VITE_ITEMS_URL
+        env:
+          VITE_APIKEY: ${{ secrets.VITE_APIKEY }}
+          VITE_AUTHDOMAIN: ${{ secrets.VITE_AUTHDOMAIN }}
+          VITE_PROJECTID: ${{ secrets.VITE_PROJECTID }}
+          VITE_STORAGEBUCKET: ${{ secrets.VITE_STORAGEBUCKET }}
+          VITE_MESSAGINGSENDERID: ${{ secrets.VITE_MESSAGINGSENDERID }}
+          VITE_APPID: ${{ secrets.VITE_APPID }}
+          VITE_ITEMS_URL: ${{ secrets.VITE_ITEMS_URL }}
         run: yarn build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
