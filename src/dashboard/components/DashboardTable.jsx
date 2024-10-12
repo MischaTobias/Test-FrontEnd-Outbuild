@@ -16,7 +16,8 @@ export const DashboardTable = ({ items, onSelectItem }) => {
       <TableContainer
         component={Paper}
         sx={{
-          maxHeight: "calc(100vh - 200px)",
+          // maxHeight: "calc(100vh - 200px)",
+          maxHeight: { xs: "calc(100vh - 200px)", sm: "800px" },
           border: "1px solid #ccc",
           boxShadow: 2,
         }}

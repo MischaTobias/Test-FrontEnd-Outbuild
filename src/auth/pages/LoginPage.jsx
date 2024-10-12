@@ -65,6 +65,7 @@ export const LoginPage = () => {
               variant="outlined"
               value={email}
               onChange={onInputChange}
+              required
             />
           </Grid2>
           <Grid2 size={{ xs: 12 }} sx={{ mt: 2 }}>
@@ -77,6 +78,7 @@ export const LoginPage = () => {
               variant="outlined"
               value={password}
               onChange={onInputChange}
+              required
               slotProps={{
                 input: {
                   endAdornment: (

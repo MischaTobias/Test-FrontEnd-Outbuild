@@ -1,14 +1,13 @@
-import { Grid2 } from "@mui/material"; // Import Grid2 from Material UI
-import { Typography } from "@mui/material"; // Import Typography for the title
+import { Grid2, Typography } from "@mui/material";
 
 export const AuthLayout = ({ children, title = "" }) => {
   return (
     <Grid2
       container
-      direction="column" // Arrange items vertically
-      justifyContent="center" // Center items vertically
-      alignItems="center" // Center items horizontally
-      sx={{ minHeight: "100vh", backgroundColor: "primary.main", padding: 4 }} // Use sx for custom styles
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ minHeight: "100vh", backgroundColor: "primary.main", padding: 4 }}
     >
       {/* Title Section */}
       <Grid2 sx={{ mb: 3 }}>
