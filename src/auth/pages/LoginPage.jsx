@@ -1,5 +1,3 @@
-import { useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import {
   Alert,
   Button,
@@ -8,44 +6,23 @@ import {
   InputAdornment,
   TextField,
 } from "@mui/material";
-
-import { AuthLayout } from "../layout/AuthLayout";
-
-import { useForm } from "../../hooks";
-import { startEmailAndPasswordSignIn } from "../../store/auth";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-const initialForm = {
-  email: "",
-  password: "",
-};
+import { AuthLayout } from "../layout/AuthLayout";
+import { useLogin } from "../../hooks";
 
 export const LoginPage = () => {
-  // Hooks
-  const dispatch = useDispatch();
-  const { email, password, onInputChange, formState } = useForm(initialForm);
-  const { status, errorMessage } = useSelector((state) => state.auth);
-
-  // State
-  const [showPassword, setShowPassword] = useState(false);
-
-  // Memoized Value
-  const isAuthenticating = useMemo(() => status === "checking", [status]);
-
-  // Handlers
-  const handleClickShowPassword = () => {
-    setShowPassword((prev) => !prev);
-  };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
-  // Submit Handler
-  const onSubmit = (event) => {
-    event.preventDefault();
-    dispatch(startEmailAndPasswordSignIn(formState));
-  };
+  const {
+    email,
+    password,
+    onInputChange,
+    errorMessage,
+    isAuthenticating,
+    showPassword,
+    handleClickShowPassword,
+    handleMouseDownPassword,
+    onSubmit,
+  } = useLogin();
 
   return (
     <AuthLayout title="ProLogin">

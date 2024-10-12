@@ -2,24 +2,13 @@ import {
   loginWithEmailAndPassword,
   logoutFirebase,
 } from "../../firebase/providers";
+import { validateEmail, validatePassword } from "../../helpers";
 import { checkCredentials, login, logout } from "./authSlice";
 
-export const checkingAuthentication = () => {
+export const startCheckingAuthentication = () => {
   return async (dispatch) => {
     dispatch(checkCredentials());
   };
-};
-
-// Function to validate email format
-const validateEmail = (email) => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-};
-
-// Function to validate password (min 6 chars, letters and numbers)
-const validatePassword = (password) => {
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-  return passwordRegex.test(password);
 };
 
 export const startEmailAndPasswordSignIn = ({ email, password }) => {

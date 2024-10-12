@@ -17,14 +17,14 @@ export const AuthLayout = ({ children, title = "" }) => {
       {/* Children Container */}
       <Grid2
         container
-        xs={12} // Full width on small screens
-        md={6} // Half width on medium and larger screens
+        xs={12}
+        md={6}
         sx={{
           backgroundColor: "white",
           padding: 4,
           borderRadius: 2,
-          boxShadow: 2, // Shadow effect
-          maxWidth: "450px", // Max width as specified
+          boxShadow: 2,
+          maxWidth: "450px",
         }}
       >
         {children}

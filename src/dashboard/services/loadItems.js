@@ -1,6 +1,6 @@
-export const loadItems = async () => {
+export const loadItems = async (URL) => {
   try {
-    const response = await fetch(import.meta.env.VITE_ITEMS_URL);
+    const response = await fetch(URL);
     const items = await response.json();
     return items;
   } catch (error) {
