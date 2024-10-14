@@ -37,11 +37,12 @@ This app might be enhanced by implementing the following features:
 ## Installation
 
 1. Clone the repo
-2. Install dependencies
+2. Add your own .env.development for the application to work properly, it's based on the .env.template file
+3. Install dependencies
    ```sh
    yarn install
    ```
-3. Start the app
+4. Start the app
    ```sh
    yarn dev
    ```
